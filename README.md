@@ -66,9 +66,11 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Jump Box | NO                  | 10.0.0.4             |
+| Web-1    | NO                  | 10.0.0.5             |
+| Web-2    | NO                  | 10.0.0.6             |
+| Web-3    | NO                  | 10.0.0.7             |
+| Elk-VM   | NO                  | 10.1.0.5             |
 
 ### Elk Configuration
 
@@ -77,7 +79,6 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 - Can automate tasks with using a single playbook.
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
 - Install Docker.io
 - Install Python-pip
 - Install docker container
@@ -86,7 +87,7 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![](images/docker_ps_output.png)
+![](images/sudodockerps.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
@@ -99,7 +100,9 @@ We have installed the following Beats on these machines:
 - Metricbeat 
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- Filebeat- monitors log files or locations you specify, collects log events and forwards them either to Elasticsearch or Logstash for indexing.
+- Metricbeat- collects metrics from the operating system and services running on the server.
+
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
@@ -109,17 +112,17 @@ SSH into the control node and follow the steps below:
 - Update the configuration file to include the private IP's of your webservers and Elk-VM 
 - Run the playbook, and navigate to Elk VM to check that the installation worked as expected. /etc/ansible/host/ this should include:
 - [webservers]
-  10.0.0.5 ansible_python_interpreter/usr/bin/python3
-  10.0.0.6 ansible_python_interpreter/usr/bin/python3
-  10.0.0.7 ansible_python_interpreter/usr/bin/python3
+  - 10.0.0.5 ansible_python_interpreter/usr/bin/python3
+  - 10.0.0.6 ansible_python_interpreter/usr/bin/python3
+  - 10.0.0.7 ansible_python_interpreter/usr/bin/python3
   [Elk]
-  10.1.0.5 ansible_python_interpreter/usr/bin/python3
+  - 10.1.0.5 ansible_python_interpreter/usr/bin/python3
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_/etc/ansible/file/filebeat-configuration.yml
+- To copy the file_configuration head to /etc/ansible/file/filebeat-configuration.yml
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_you should edit the /etc/ansible/hosts file to add the private IP's of your webservers and Elk-VM
 - _Which URL do you navigate to in order to check that the ELK server is running?
-http://[your.ELK-VM-PublicIP]:5601/app/kibana
+http://[your.ELK-VM-PublicIP]:5601/app/kibana 
 - This is how your link will look after you have set up your Elk Server. 
+- after you type in the URL you should have a page that looks like this
+![](images/kibana.png)
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
