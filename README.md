@@ -122,7 +122,9 @@ SSH into the control node and follow the steps below:
 - you should edit the /etc/ansible/hosts file to add the private IP's of your webservers and Elk-VM
 - This is how your link will look after you have set up your Elk Server.
   - http://[yourELK-VM-PublicIP]:5601/app/kibana  
-- after you type in the URL you should have a page that looks like this
+- After you type in the URL you should have a page that looks like this
 ![](images/kibana.png)
+
+- If everything works, congratulations! 
 
  
