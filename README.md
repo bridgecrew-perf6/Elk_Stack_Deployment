@@ -9,6 +9,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
 - [Elk Playbook](https://github.com/jemtkd1618490/Elk_Stack_Deployment/blob/main/ansible/install-elk.yml)
 - [Filebeat Playbook](https://github.com/jemtkd1618490/Elk_Stack_Deployment/blob/main/ansible/filebeat-playbook.yml)
 - [Metricbeat Playbook](https://github.com/jemtkd1618490/Elk_Stack_Deployment/blob/main/ansible/Metricbeat-Playbook.yml)
+- [Pentest DVWA Playbook](https://github.com/jemtkd1618490/Elk_Stack_Deployment/blob/main/ansible/Pentest.yml)
 
 This document contains the following details:
 - Description of the Topology
