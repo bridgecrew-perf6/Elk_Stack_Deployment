@@ -60,7 +60,7 @@ The configuration details of each machine may be found below.
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the JumpBox machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- Your personal IP 
+- Your public IP 
 
 Machines within the network can only be accessed by SSH.
  Jumpbox: Private IP 10.0.0.4
@@ -69,12 +69,12 @@ A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes                 | 174.20.115.144       |
+| Jump Box | Yes                 | my public ip         |
 | Web-1    | NO                  | 10.0.0.5             |
 | Web-2    | NO                  | 10.0.0.6             |
 | Web-3    | NO                  | 10.0.0.7             |
-| Elk-VM   | Yes                 | 174.20.115.144       |
-
+| Elk-VM   | Yes                 | my public ip         |
+| Load Balancer | Yes            | my public ip |
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
