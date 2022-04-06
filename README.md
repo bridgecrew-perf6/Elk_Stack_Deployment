@@ -22,13 +22,13 @@ The main purpose of this network is to expose a load-balanced and monitored inst
 Load balancing ensures that the application will be highly available, in addition to restricting inbound access to the network.
 - The main purpose of a load balancer is to distribute web traffic across multiple servers, load balancing helps with making sure our servers don't get
 overwhelmed with inbound traffic to our site. In this case our load balancer was installed in front of our VM's to:
--protect web applications
--document traffic configuration tools
--deny communications with a malicious IP address
--manage web traffic
+- protect web applications
+- document traffic configuration tools
+- deny communications with a malicious IP address
+- manage web traffic
 
 Jump Box:
--A jumpbox is an Azure virtual machine that's running Linux or Windows and to which user can connect via the Remote Desktop Protocol (RDP) 
+- A jumpbox is an Azure virtual machine that's running Linux or Windows and to which user can connect via the Remote Desktop Protocol (RDP) 
 or Secure Shell (SSH). A Jump Box or "Jump Server" is a gateway on a network used to access and manage devices in adifferent security zones.
 Or, you can think of a Jump Box as a bridge between trusted networks, which can help with security and prevent exposure from public IP addresses 
 associated with the VM. 
@@ -121,7 +121,7 @@ SSH into the control node and follow the steps below:
 - /etc/ansible/file/filebeat-configuration.yml
 - you should edit the /etc/ansible/hosts file to add the private IP's of your webservers and Elk-VM
 - This is how your link will look after you have set up your Elk Server.
- - http://[yourELK-VM-PublicIP]:5601/app/kibana  
+  - http://[yourELK-VM-PublicIP]:5601/app/kibana  
 - after you type in the URL you should have a page that looks like this
 ![](images/kibana.png)
 
